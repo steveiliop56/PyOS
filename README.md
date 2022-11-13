@@ -17,7 +17,7 @@ There is not a working shell so you have to run the script manualy from ***only*
 Feel free to edit the code and test the various ***(6 )*** fuctions that it has to offer ***:)***...
 To run the "os" run the this command:
 ```sh
-python3 os.py
+python3 pyos.py
 ```
 
 
