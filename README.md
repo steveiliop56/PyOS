@@ -13,7 +13,7 @@
 - Everything else
 
 #### Running...
-There is not a working shell so you have to run the script manualy from ***only*** os.py script.
+There is not a working shell so you have to run the script manualy from ***only*** pyos.py script.
 Feel free to edit the code and test the various ***(6 )*** fuctions that it has to offer ***:)***...
 To run the "os" run the this command:
 ```sh
