@@ -11,7 +11,7 @@ def passwd(username):
             new_passwd = password_hasher.hash(input("New password: "))
             verify = password_hasher.hash(input("Retype new password: "))
             if new_passwd == verify:
-                cursor.execute("update users set password = ? where username = ?", (new_passwd, username))
+                cursor.execute(f"update users set password = '{new_passwd}' where username = '{username}'")
                 db.commit()
                 print("passwd: password updated successfully")
         else:
