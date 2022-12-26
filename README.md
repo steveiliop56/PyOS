@@ -28,6 +28,6 @@ python3 pyos.py
 If you want to see it run these commands inside the pyos directory:
 
 ```sh
-cd pyos_gui
+cd Gui
 python3 gui.py
 ```
