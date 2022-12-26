@@ -8,6 +8,9 @@
 - Passwd
 - Pasword Hasher
 - Database Checker
+- Shell
+- Running programs via the shell
+- Something like a gui.
 
 #### What's not working...
 
@@ -21,4 +24,10 @@ With this update **finaly** PyOS has a working shell that you can run commands! 
 python3 pyos.py
 ```
 
+*Note:* I am also working on gui (graphical user interface) for pyos that currently does not do anything rather that printing in the terminal what button is pressed.
+If you want to see it run these commands inside the pyos directory:
 
+```sh
+cd pyos_gui
+python3 gui.py
+```
