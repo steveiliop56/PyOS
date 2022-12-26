@@ -5,6 +5,8 @@ def login_screen():
     password = password_hasher.hash(input("Password: "))
     if database_checker.check_username(username) == True:
         if database_checker.check_password(username, password) == True:
-            return True
+            return True, username
+        else:
+            return False
     else:
         return False

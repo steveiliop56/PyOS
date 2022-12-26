@@ -1,16 +1,27 @@
 import sqlite3
 from System.programs import passwd
 from System.auth import database_checker, password_hasher
+import colorama
+from colorama import Fore
+
+colorama.init(autoreset=True)
+
 
 db = sqlite3.connect("System/auth/credentials.db")
 cursor = db.cursor()
 
-def deluser(username):
+def deluser(username, currentusername):
     global db
     global cursor
-    if database_checker.check_password(username, password_hasher.hash(input(f"Enter password to delete {username}: "))) == True:
-        print(f"Removing user `{username}' ...\nWarning: group `{username}' has no more members.\nDone.")
-        cursor.execute(f"delete from users where username = '{username}'")
-        db.commit()
+    if currentusername == "root":
+        if username == "root":
+            print(Fore.RED + "You can't delete yourself!" + Fore.BLACK)
+        else:
+            if database_checker.check_username(username) == True:
+                print(f"Removing user `{username}' ...\nWarning: group `{username}' has no more members.\nDone.")
+                cursor.execute(f"delete from users where username = '{username}'")
+                db.commit()
+            else:
+                print(Fore.BLACK + "deluser: User does not exist!")
     else:
-        print("deluser: Authentication token manipulation error \ndeluser: user undeleted")
+        print(Fore.RED + "Only root can delete users!" + Fore.BLACK)
