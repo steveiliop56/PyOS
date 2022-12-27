@@ -11,7 +11,7 @@
 - Shell
 - Neofetch
 - Uname
-- Ping (Without switches)
+- Ping 
 - Something like a gui.
 
 #### What's not working...
