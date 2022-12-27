@@ -9,7 +9,9 @@
 - Pasword Hasher
 - Database Checker
 - Shell
-- Running programs via the shell
+- Neofetch
+- Uname
+- Ping (Without switches)
 - Something like a gui.
 
 #### What's not working...
