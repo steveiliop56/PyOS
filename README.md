@@ -1,3 +1,5 @@
+**Update:** Because I don't have much time the developing of pyos will be slow. I will slowly add new features, upgrades and bug fixes if I have time. *(Update coming next week...)*
+
 ## PyOS
 
 *This is an "operating system" written in python!*
