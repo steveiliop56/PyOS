@@ -18,9 +18,9 @@ Get ready for...
 
 - 😮 An interactive command line interface with a a million different colors so your eyes will return to grayscale!
 - 😎 Authentication system so your password will be hashed and NOBODY will be able to login so your unencrypted files can be safe!
-- 🤑 Ability to add your own commands with as little lines of code as possibly.
+- 🤑 Ability to add your own commands with as little lines of code as possible.
 - 😲 A GUI that does not exactly work and makes graphics designers cry!
-- 😄 As little requirements as possibly so you can get to the fun part quickly.
+- 😄 As little requirements as possible so you can get to the fun part quickly.
 - 😁 Anddd in any way it's better than windows!
 
 ## Development 
