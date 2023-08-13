@@ -49,4 +49,4 @@ Yeahhh please don't do that it's a [bad idea](GUI.md) trust me...
 
 ## License
 
-The license is a simple GNU v3 so you can play with the code as much as your heart want. I am also not responsible if you manage to fry your computer with a simple python program. Good luck explaining to the warranty what happened 😁.
+The license is a simple GNU v3 so you can play with the code as much as your heart desires. I am also not responsible if you manage to fry your computer with a simple python program. Good luck explaining to the warranty what happened 😁.
