@@ -1,27 +1,35 @@
-from System.programs import adduser, deluser, passwd, ping, neofetch, uname, clear
 from colorama import Fore
 import colorama
+import importlib
+
 colorama.init(autoreset=True)
 
 def handle(command, params, currentusername):
+    try:
+        module = importlib.import_module(f"System.programs.{command}")
+        run_command = getattr(module, command)
+    except:
+        pass
     match command:
         case "adduser":
-            adduser.adduser(params, currentusername)
+            run_command(params, currentusername)
         case "deluser":
-            deluser.deluser(params, currentusername)
+            run_command(params, currentusername)
         case "passwd":
-            passwd.passwd(params, currentusername)
+            run_command(params, currentusername)
         case "echo":
             print(params)
         case "exit":
             exit()
         case "ping":
-            print(Fore.YELLOW + str(ping.ping(params)))
+            print(Fore.YELLOW + str(run_command(params)))
         case "neofetch":
-            neofetch.neofetch(currentusername)
+            run_command(currentusername)
         case "uname":
-            uname.uname(currentusername)
+            run_command(currentusername)
         case "clear":
-            clear.clear()
+            run_command()
+        case "info":
+            run_command(params)
         case _:
             print(Fore.RED + "CommandHandler: Command " + Fore.YELLOW + command + Fore.RED + " not found!")

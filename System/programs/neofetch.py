@@ -16,3 +16,6 @@ def neofetch(username):
     print(Fore.YELLOW + "######" + Fore.LIGHTBLACK_EX + "#" + Fore.WHITE + "#######" + Fore.LIGHTBLACK_EX +"#" + Fore.YELLOW + "######   " + Fore.RED +"Terminal: " + Fore.GREEN + "shell.py")
     print(Fore.YELLOW + "#######" + Fore.LIGHTBLACK_EX + "#" + Fore.WHITE + "#####" + Fore.LIGHTBLACK_EX + "#" + Fore.YELLOW + "#######   " + Fore.RED + "CPU: " + Fore.GREEN + "PyCPU (1) @ 0.005GHz")
     print(Fore.YELLOW + "  #####" + Fore.LIGHTBLACK_EX + "#######" + Fore.YELLOW + "#####     " + Fore.RED + "Memory: " + Fore.GREEN + "1MiB / 2MiB")
+
+def command_info():
+    return "Gives info about the system a nice format. Usage: neofetch."

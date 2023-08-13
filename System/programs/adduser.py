@@ -34,3 +34,6 @@ def adduser(username, currenusername):
             input("Is the information correct? [Y/n]")
     else:
         print(Fore.RED + "Only root can add users!" + Fore.LIGHTBLACK_EX)
+
+def command_info():
+    return "With adduser you can create new user accounts that can be used in the os. Usage: adduser username. Note: Only root can create user accounts."

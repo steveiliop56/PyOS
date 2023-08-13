@@ -25,3 +25,6 @@ def deluser(username, currentusername):
                 print(Fore.LIGHTBLACK_EX + "deluser: User does not exist!")
     else:
         print(Fore.RED + "Only root can delete users!" + Fore.LIGHTBLACK_EX)
+
+def command_info():
+    return "With deluser you can delete different users from the os. Usage: deluser usertodelete. Note: Only root can delete user accounts."

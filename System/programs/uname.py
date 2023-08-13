@@ -7,4 +7,5 @@ colorama.init(autoreset=True)
 def uname(username):
     print(Fore.BLUE + f"{username}" + " on PyOS " + str(platform.release()) + " running on " + Fore.RED + str(platform.system()) + ".")
 
-uname 
+def command_info():
+    return "Gives basic info about the os. Usage: uname."

@@ -5,6 +5,7 @@ from System.core import commandhandler
 import time
 import colorama
 from colorama import Fore
+import readline
 
 colorama.init(autoreset=True)
 
