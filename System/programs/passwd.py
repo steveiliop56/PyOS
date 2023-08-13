@@ -11,14 +11,14 @@ cursor = db.cursor()
 def passwd(username, currentusername):
     if currentusername == username:
         if database_checker.check_username(username) == True:
-            print(Fore.BLUE + f"Changing password for {username}." + Fore.BLACK)
+            print(Fore.BLUE + f"Changing password for {username}." + Fore.LIGHTBLACK_EX)
             if database_checker.check_password(username, password_hasher.hash(input("Current password: "))) == True:
                 new_passwd = password_hasher.hash(input("New password: "))
                 verify = password_hasher.hash(input("Retype new password: "))
                 if new_passwd == verify:
                     cursor.execute(f"update users set password = '{new_passwd}' where username = '{username}'")
                     db.commit()
-                    print(Fore.GREEN + "passwd: password updated successfully" + Fore.BLACK)
+                    print(Fore.GREEN + "passwd: password updated successfully" + Fore.LIGHTBLACK_EX)
             else:
                 print("passwd: Authentication token manipulation error \npasswd: password unchanged")
         else:
@@ -30,10 +30,10 @@ def passwd(username, currentusername):
             if new_passwd == verify:
                 cursor.execute(f"update users set password = '{new_passwd}' where username = '{username}'")
                 db.commit()
-                print(Fore.GREEN + "passwd: password updated successfully" + Fore.BLACK)
+                print(Fore.GREEN + "passwd: password updated successfully" + Fore.LIGHTBLACK_EX)
             else:
                 print("passwd: Authentication token manipulation error \npasswd: password unchanged")
         else:
             print(f"passwd: user '{username}' does not exist")       
     else:
-        print(Fore.RED + f"Only root and {username} can change password!" + Fore.BLACK)
+        print(Fore.RED + f"Only root and {username} can change password!" + Fore.LIGHTBLACK_EX)

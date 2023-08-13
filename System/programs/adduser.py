@@ -13,9 +13,9 @@ def adduser(username, currenusername):
     global db
     global cursor
     if currenusername == "root":
-        print(Fore.BLUE + f"Adding user '{username}'" + Fore.BLACK)
+        print(Fore.BLUE + f"Adding user '{username}'" + Fore.LIGHTBLACK_EX)
         if database_checker.check_username(username) == True:
-            print(Fore.RED + f"adduser: The user `{username}' already exists." + Fore.BLACK)
+            print(Fore.RED + f"adduser: The user `{username}' already exists." + Fore.LIGHTBLACK_EX)
         else:
             cursor.execute(f"insert into users values ('{username}', 'userpass')")
             print(f"Adding new group `{username}' (1001) ...\nAdding new user `{username}' (1001) with group `{username}' ..\nCreating home directory `/home/{username}' ...\nCopying files from `/etc/skel' ...'.")
@@ -33,4 +33,4 @@ def adduser(username, currenusername):
             input("\tOther []:")
             input("Is the information correct? [Y/n]")
     else:
-        print(Fore.RED + "Only root can add users!" + Fore.BLACK)
+        print(Fore.RED + "Only root can add users!" + Fore.LIGHTBLACK_EX)

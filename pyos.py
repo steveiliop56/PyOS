@@ -12,10 +12,10 @@ colorama.init(autoreset=True)
 if __name__ == "__main__":
     
     # Wait for user to login
-    print(Fore.BLUE + "Welcome, please login!" + Fore.BLACK)
+    print(Fore.BLUE + "Welcome, please login!" + Fore.LIGHTBLACK_EX)
     logstats = login.login_screen()
     while list([logstats])[0] == False:
-        print(Fore.RED + "Invalid username or password! Please try again." + Fore.BLACK)
+        print(Fore.RED + "Invalid username or password! Please try again." + Fore.LIGHTBLACK_EX)
         logstats = login.login_screen()
 
     # Activate the shell and tell it what username to use

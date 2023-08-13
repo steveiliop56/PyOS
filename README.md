@@ -1,3 +1,7 @@
+## Update
+
+**The development of pyos had stopped for some months because I didn't have time but now I will be back om again!**
+
 ## PyOS
 
 *This is an "operating system" written in python!*

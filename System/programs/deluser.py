@@ -15,13 +15,13 @@ def deluser(username, currentusername):
     global cursor
     if currentusername == "root":
         if username == "root":
-            print(Fore.RED + "You can't delete yourself!" + Fore.BLACK)
+            print(Fore.RED + "You can't delete yourself!" + Fore.LIGHTBLACK_EX)
         else:
             if database_checker.check_username(username) == True:
                 print(f"Removing user `{username}' ...\nWarning: group `{username}' has no more members.\nDone.")
                 cursor.execute(f"delete from users where username = '{username}'")
                 db.commit()
             else:
-                print(Fore.BLACK + "deluser: User does not exist!")
+                print(Fore.LIGHTBLACK_EX + "deluser: User does not exist!")
     else:
-        print(Fore.RED + "Only root can delete users!" + Fore.BLACK)
+        print(Fore.RED + "Only root can delete users!" + Fore.LIGHTBLACK_EX)
