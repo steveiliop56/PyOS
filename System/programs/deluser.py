@@ -7,7 +7,7 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 
-db = sqlite3.connect("System/auth/credentials.db")
+db = sqlite3.connect("System/auth/credentials.sqlite")
 cursor = db.cursor()
 
 def deluser(username, currentusername):

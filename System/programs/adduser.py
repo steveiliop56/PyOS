@@ -6,7 +6,7 @@ from colorama import Fore
 
 colorama.init(autoreset=True)
 
-db = sqlite3.connect("System/auth/credentials.db")
+db = sqlite3.connect("System/auth/credentials.sqlite")
 cursor = db.cursor()
 
 def adduser(username, currenusername):
@@ -19,12 +19,12 @@ def adduser(username, currenusername):
         else:
             cursor.execute(f"insert into users values ('{username}', 'userpass')")
             print(f"Adding new group `{username}' (1001) ...\nAdding new user `{username}' (1001) with group `{username}' ..\nCreating home directory `/home/{username}' ...\nCopying files from `/etc/skel' ...'.")
-            new_passwd = password_hasher.hash(input("New password: "))
-            verify = password_hasher.hash(input("Retype new password: "))
-            if new_passwd == verify:
-                cursor.execute(f"update users set password = '{new_passwd}' where username = '{username}'")
-                db.commit()
-                print("passwd: password updated successfully")
+            cursor.execute(f"update users set password = '' where username = '{username}'")
+            db.commit()
+            while passwd.password_changer(username, True) == False:
+                print(Fore.RED + "Sorry, passwords do not match." + Fore.LIGHTBLACK_EX)
+                if input("Try again? [y/N] ").find("y") != -1:
+                    break 
             print(f"Changing the user information for {username}\nEnter the new value, or press ENTER for the default")
             input("\tFull Name []:")
             input("\tRoom Number []:")

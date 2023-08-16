@@ -18,9 +18,9 @@ Get ready for...
 
 - 😮 An interactive command line interface with a a million different colors so your eyes will return to grayscale!
 - 😎 Authentication system so your password will be hashed and NOBODY will be able to login so your unencrypted files can be safe!
-- 🤑 Ability to add your own commands with as little lines of code as possible.
+- 🤑 Ability to add your own commands with as little lines of code as possibly.
 - 😲 A GUI that does not exactly work and makes graphics designers cry!
-- 😄 As little requirements as possible so you can get to the fun part quickly.
+- 😄 As little requirements as possibly so you can get to the fun part quickly.
 - 😁 Anddd in any way it's better than windows!
 
 ## Development 
@@ -45,8 +45,8 @@ python3 pyos.py
 
 ## Try the awesome GUI 🤩!
 
-Yeahhh please don't do that it's a [bad idea](GUI.md) trust me... 
+My eyes couldn't handle how bad it was, soooo, I deleted it 😁!
 
 ## License
 
-The license is a simple GNU v3 so you can play with the code as much as your heart desires. I am also not responsible if you manage to fry your computer with a simple python program. Good luck explaining to the warranty what happened 😁.
+The license is a simple GNU v3 so you can play with the code as much as your heart want. I am also not responsible if you manage to fry your computer with a simple python program. Good luck explaining to the warranty what happened 😁.
