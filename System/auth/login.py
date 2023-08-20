@@ -1,4 +1,4 @@
-from System.auth import database_checker, password_hasher
+from System.auth import database_checker
 from getpass import getpass
 
 def login_screen():

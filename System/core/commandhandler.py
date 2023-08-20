@@ -31,5 +31,7 @@ def handle(command, params, currentusername):
             run_command()
         case "info":
             run_command(params)
+        case "su":
+            run_command(params)
         case _:
             print(Fore.RED + "CommandHandler: Command " + Fore.YELLOW + command + Fore.RED + " not found!")

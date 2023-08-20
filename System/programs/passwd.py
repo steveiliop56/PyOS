@@ -22,23 +22,23 @@ def password_changer(username, skip_current):
                     print(Fore.GREEN + "passwd: password updated successfully" + Fore.LIGHTBLACK_EX)
                     return True
                 else:
-                    print("No password supplied!")
+                    print("passwd: No password supplied!")
             else:
-                print("passwd: Authentication token manipulation error \npasswd: password unchanged")
+                print(Fore.RED + "passwd: Authentication token manipulation error! \npasswd: password unchanged!" + Fore.LIGHTBLACK_EX)
                 return False
         else:
-            print("No password supplied!")
+            print(Fore.RED + "passwd: Invalid password supplied!" + Fore.LIGHTBLACK_EX)
     else:
-        print(f"passwd: user '{username}' does not exist") 
+        print(f"passwd: user '{username}' does not exist!") 
 
 def passwd(username, currentusername):
-    if username == "":
-        password_changer(currentusername, False)
-    elif username != "":
-        if currentusername == "root":
+    if currentusername == "root":
+        if username and not username.isspace():
             password_changer(username, False)
         else:
-            print(Fore.RED + f"Only root can change other account's password!" + Fore.LIGHTBLACK_EX)
+            print(Fore.RED + "passwd: No username supplied!" + Fore.LIGHTBLACK_EX)
+    else:
+        print(Fore.RED + f"passwd: Only root can change other account's password!" + Fore.LIGHTBLACK_EX)
 
 def command_info():
     return "Chnage your password or change the passowrd of a user. Usage: passwd or passwd username. Note: only root can change other user's password."
