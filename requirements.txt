@@ -1,7 +1,4 @@
 colorama
 pygame
 pythonping
-importlib
-readline
 bcrypt
-getpass
