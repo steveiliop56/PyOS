@@ -1,44 +1,39 @@
-from System.auth import password_hasher, database_checker
-import sqlite3
-import colorama
-from colorama import Fore
+from System.auth.passwords import hash, new
+from System.core.database import database
 from getpass import getpass
+import colorama as c
 
-colorama.init(autoreset=True)
+c.init(autoreset=True)
 
-db = sqlite3.connect("System/auth/credentials.sqlite")
-cursor = db.cursor()
 
-def password_changer(username, skip_current):
-    if database_checker.check_username(username) == True:
-        print(Fore.BLUE + f"Changing password for {username}." + Fore.LIGHTBLACK_EX)
-        if skip_current == True or database_checker.check_password(username, getpass(Fore.RESET + "Current password: ")) == True:
-            new_passwd = getpass(Fore.RESET + "New password: ")
-            verify = getpass(Fore.RESET + "Retype new password: ")
-            if new_passwd == verify:
-                if new_passwd != "":
-                    cursor.execute(f"update users set password = '{password_hasher.hash(new_passwd)}' where username = '{username}'")
-                    db.commit()
-                    print(Fore.GREEN + "passwd: password updated successfully" + Fore.LIGHTBLACK_EX)
-                    return True
-                else:
-                    print("passwd: No password supplied!")
+def run(params, username):
+    db = database()
+    if params == "":
+        print(c.Fore.BLUE + f"Changing password for yourself...")
+        if db.check_password(username, getpass("Enter current password: ")):
+            ok, passwd = new()
+            if ok:
+                db.change_pass(username, hash(passwd))
+                print(c.Fore.GREEN + "Password updated!")
             else:
-                print(Fore.RED + "passwd: Authentication token manipulation error! \npasswd: password unchanged!" + Fore.LIGHTBLACK_EX)
-                return False
+                print(c.Fore.RED + "Passwords do not match!")
         else:
-            print(Fore.RED + "passwd: Invalid password supplied!" + Fore.LIGHTBLACK_EX)
+            print(c.Fore.RED + "Authentication failed!")
     else:
-        print(f"passwd: user '{username}' does not exist!") 
-
-def passwd(username, currentusername):
-    if username and not username.isspace():
-        if currentusername == "root":
-            password_changer(username, True)
+        if username == "root":
+            print(c.Fore.BLUE + f"Changing password for username {params}...")
+            if db.check_username(params):
+                ok, passwd = new()
+                if ok:
+                    db.change_pass(params, hash(passwd))
+                    print(c.Fore.GREEN + "Password updated!")
+                else:
+                    print(c.Fore.RED + "Passwords do not match!")
+            else:
+                print(c.Fore.RED + f"Cannot find user {params}!")
         else:
-            print(Fore.RED + f"passwd: Only root can change other account's password!" + Fore.LIGHTBLACK_EX)
-    else:
-        password_changer(currentusername, False)
+            print(c.Fore.RED + "Only root can change other user's passwords!")
 
-def command_info():
+
+def help():
     return "Chnage your password or change the passowrd of a user. Usage: passwd or passwd username. Note: only root can change other user's password."

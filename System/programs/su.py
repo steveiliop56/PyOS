@@ -1,19 +1,23 @@
-from System.auth import database_checker
-from System.core import shell
+from System.core.database import database
+from System.core.shell import set_shell_username
 from getpass import getpass
-from colorama import Fore
+import colorama as c
 
-def su(username, currentusername):
+c.init(autoreset=True)
+
+
+def run(params, username):
+    username = params
+    db = database()
     if username and not username.isspace():
-        if database_checker.check_username(username) == True:
-            if currentusername == "root" or database_checker.check_password(username, getpass(Fore.RESET + "Password: ")) == True:
-                shell.shell(username)
-            else:
-                print(Fore.RED + "su: Authentication failure!" + Fore.LIGHTBLACK_EX)
+        if db.check_password(username, getpass("Password: ")):
+            set_shell_username(username)
         else:
-            print(Fore.RED + f"su: User {username} does not exist!" + Fore.LIGHTBLACK_EX)
+            print(c.Fore.RED + "Authentication failure!")
     else:
-        print(Fore.RED + "su: No username supplied!" + Fore.LIGHTBLACK_EX)
+        print(
+            c.Fore.RED + f"User does not exist!")
 
-def command_info():
+
+def help():
     return "Su allows you to change your shell to other username. Usage: su username."

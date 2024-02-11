@@ -1,21 +1,34 @@
-import colorama
-from colorama import Fore
+import colorama as c
 
-colorama.init(autoreset=True)
+c.init(autoreset=True)
 
-def neofetch(username):
-    print(Fore.LIGHTBLACK_EX + "        #####    " + Fore.RED + f"       {username}" + Fore.BLUE + "@" + Fore.GREEN + "pyos")
-    print(Fore.LIGHTBLACK_EX + "       #######    " + Fore.BLUE + "      ------------------")
-    print(Fore.LIGHTBLACK_EX + "       ##"+ Fore.WHITE + "O" + Fore.LIGHTBLACK_EX + "#" + Fore.WHITE + "O" + Fore.LIGHTBLACK_EX + "##" + Fore.RED + "          OS:" + Fore.GREEN + " PyOS") 
-    print(Fore.LIGHTBLACK_EX + "       #" + Fore.YELLOW + "#####" + Fore.LIGHTBLACK_EX + "#" + Fore.RED +"          Host:" + Fore.GREEN + " Python")
-    print(Fore.LIGHTBLACK_EX + "     ##" + Fore.WHITE + "##" + Fore.YELLOW + "###" + Fore.WHITE + "##" + Fore.LIGHTBLACK_EX + "##" + Fore.RED + "        Kernel:" + Fore.GREEN + " pyos-8.7")
-    print(Fore.LIGHTBLACK_EX + "    #" + Fore.WHITE + "##########" + Fore.LIGHTBLACK_EX + "##" + Fore.RED + "       Uptime:" + Fore.GREEN + " Who knows?")
-    print(Fore.LIGHTBLACK_EX + "   #" + Fore.WHITE + "############" + Fore.LIGHTBLACK_EX + "##      " + Fore.RED + "Packages: " + Fore.GREEN + "None")
-    print(Fore.LIGHTBLACK_EX + "   #" + Fore.WHITE + "############" + Fore.LIGHTBLACK_EX + "###     " + Fore.RED + "Shell: " + Fore.GREEN + "pyshell1.0")
-    print(Fore.YELLOW + "  ##" + Fore.LIGHTBLACK_EX + "#" + Fore.WHITE + "###########" + Fore.LIGHTBLACK_EX + "##" + Fore.YELLOW + "#     " + Fore.RED + "Resolution: " + Fore.GREEN + "None")
-    print(Fore.YELLOW + "######" + Fore.LIGHTBLACK_EX + "#" + Fore.WHITE + "#######" + Fore.LIGHTBLACK_EX +"#" + Fore.YELLOW + "######   " + Fore.RED +"Terminal: " + Fore.GREEN + "shell.py")
-    print(Fore.YELLOW + "#######" + Fore.LIGHTBLACK_EX + "#" + Fore.WHITE + "#####" + Fore.LIGHTBLACK_EX + "#" + Fore.YELLOW + "#######   " + Fore.RED + "CPU: " + Fore.GREEN + "PyCPU (1) @ 0.005GHz")
-    print(Fore.YELLOW + "  #####" + Fore.LIGHTBLACK_EX + "#######" + Fore.YELLOW + "#####     " + Fore.RED + "Memory: " + Fore.GREEN + "1MiB / 2MiB")
 
-def command_info():
+def run(params, username):
+    print(c.Fore.LIGHTBLACK_EX + "        #####    " + c.Fore.RED +
+          f"       {username}" + c.Fore.BLUE + "@" + c.Fore.GREEN + "pyos")
+    print(c.Fore.LIGHTBLACK_EX + "       #######    " +
+          c.Fore.BLUE + "      ------------------")
+    print(c.Fore.LIGHTBLACK_EX + "       ##" + c.Fore.WHITE + "O" + c.Fore.LIGHTBLACK_EX + "#" +
+          c.Fore.WHITE + "O" + c.Fore.LIGHTBLACK_EX + "##" + c.Fore.RED + "          OS:" + c.Fore.GREEN + " PyOS")
+    print(c.Fore.LIGHTBLACK_EX + "       #" + c.Fore.YELLOW + "#####" +
+          c.Fore.LIGHTBLACK_EX + "#" + c.Fore.RED + "          Host:" + c.Fore.GREEN + " Python")
+    print(c.Fore.LIGHTBLACK_EX + "     ##" + c.Fore.WHITE + "##" + c.Fore.YELLOW + "###" + c.Fore.WHITE +
+          "##" + c.Fore.LIGHTBLACK_EX + "##" + c.Fore.RED + "        Kernel:" + c.Fore.GREEN + " pyos-8.7")
+    print(c.Fore.LIGHTBLACK_EX + "    #" + c.Fore.WHITE + "##########" + c.Fore.LIGHTBLACK_EX +
+          "##" + c.Fore.RED + "       Uptime:" + c.Fore.GREEN + " Who knows?")
+    print(c.Fore.LIGHTBLACK_EX + "   #" + c.Fore.WHITE + "############" +
+          c.Fore.LIGHTBLACK_EX + "##      " + c.Fore.RED + "Packages: " + c.Fore.GREEN + "None")
+    print(c.Fore.LIGHTBLACK_EX + "   #" + c.Fore.WHITE + "############" +
+          c.Fore.LIGHTBLACK_EX + "###     " + c.Fore.RED + "Shell: " + c.Fore.GREEN + "pyshell1.0")
+    print(c.Fore.YELLOW + "  ##" + c.Fore.LIGHTBLACK_EX + "#" + c.Fore.WHITE + "###########" +
+          c.Fore.LIGHTBLACK_EX + "##" + c.Fore.YELLOW + "#     " + c.Fore.RED + "Resolution: " + c.Fore.GREEN + "None")
+    print(c.Fore.YELLOW + "######" + c.Fore.LIGHTBLACK_EX + "#" + c.Fore.WHITE + "#######" + c.Fore.LIGHTBLACK_EX +
+          "#" + c.Fore.YELLOW + "######   " + c.Fore.RED + "Terminal: " + c.Fore.GREEN + "shell.py")
+    print(c.Fore.YELLOW + "#######" + c.Fore.LIGHTBLACK_EX + "#" + c.Fore.WHITE + "#####" + c.Fore.LIGHTBLACK_EX +
+          "#" + c.Fore.YELLOW + "#######   " + c.Fore.RED + "CPU: " + c.Fore.GREEN + "PyCPU (1) @ 0.005GHz")
+    print(c.Fore.YELLOW + "  #####" + c.Fore.LIGHTBLACK_EX + "#######" + c.Fore.YELLOW +
+          "#####     " + c.Fore.RED + "Memory: " + c.Fore.GREEN + "1MiB / 2MiB")
+
+
+def help():
     return "Gives info about the system a nice format. Usage: neofetch."

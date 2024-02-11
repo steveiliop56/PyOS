@@ -1,11 +1,13 @@
 import platform
-import colorama
-from colorama import Fore
+import colorama as c
 
-colorama.init(autoreset=True)
+c.init(autoreset=True)
 
-def uname(username):
-    print(Fore.BLUE + f"{username}" + " on PyOS " + str(platform.release()) + " running on " + Fore.RED + str(platform.system()) + ".")
 
-def command_info():
+def run(params, username):
+    print(c.Fore.BLUE + f"{username}" + " on PyOS " + str(platform.release()
+                                                          ) + " running on " + c.Fore.RED + str(platform.system()) + ".")
+
+
+def help():
     return "Gives basic info about the os. Usage: uname."

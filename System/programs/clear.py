@@ -1,7 +1,8 @@
 import platform
 import os
 
-def clear():
+
+def run(params, username):
     if platform.system() == "Windows":
         os.system("cls")
     elif platform.system() == "Linux":
@@ -9,5 +10,6 @@ def clear():
     elif platform.system() == "Darwin":
         os.system("clear")
 
-def command_info():
+
+def help():
     return "This command clears the screen. Usage: clear."

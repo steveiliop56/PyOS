@@ -1,23 +1,34 @@
-# Nothing here...
-from System.auth import login
-from System.programs import *
-from System.core import commandhandler
-import time
-import colorama
-from colorama import Fore
-import readline
+import colorama as c
 
-colorama.init(autoreset=True)
+c.init(autoreset=True)
+
+username = ""
+
 
 def shell(username):
+    command = input(c.Fore.RED + f"{username}" + c.Fore.BLUE +
+                    "@" + c.Fore.GREEN + "pyos: " + c.Fore.LIGHTBLACK_EX)
+    if command != "":
+        try:
+            program, params = command.split(" ", 1)
+        except ValueError:
+            params = ""
+            program = command
+        try:
+            program = __import__(
+                f"System.programs.{program}", fromlist=['run'])
+            program.run(params, username)
+        except ModuleNotFoundError:
+            print(c.Fore.RED + "Command " + c.Fore.YELLOW +
+                  program + c.Fore.RED + " not found!")
+
+
+def set_shell_username(new_username):
+    global username
+    username = new_username
+
+
+def shell_manager():
+    global username
     while True:
-        icommand = input(Fore.RED + f"{username}" + Fore.BLUE + "@" + Fore.GREEN + "pyos: " + Fore.LIGHTBLACK_EX)
-        if icommand == "":
-            pass
-        else:
-            try:
-                command, params = icommand.split(" ", 1)
-            except ValueError:
-                params = ""
-                command = icommand
-            commandhandler.handle(command, params, username)
+        shell(username)
