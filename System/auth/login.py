@@ -6,7 +6,7 @@ def loginScreen():
     username = input("PyOS login: ")
     password = getpass("Password: ")
     db = database()
-    if db.check_password(username, password) == True:
+    if db.checkPassword(username, password) == True:
         return True, username
     else:
         return False
