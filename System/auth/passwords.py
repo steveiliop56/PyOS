@@ -11,9 +11,9 @@ def hash(password):
 
 
 def new():
-    passwd = getpass("New Password: ")
-    passwd_verify = getpass("Retype password: ")
-    if passwd == passwd_verify:
-        return True, passwd
+    password = getpass("New Password: ")
+    passwordVerify = getpass("Retype password: ")
+    if password == passwordVerify:
+        return True, password
     else:
         return False, ""

@@ -4,15 +4,15 @@ import colorama as c
 c.init(autoreset=True)
 
 def run(params, username):
-    del_username = params
+    deleteUsername = params
     db = database()
     if username == "root":
-        if del_username and not del_username.isspace():
-            if del_username == "root":
+        if deleteUsername and not deleteUsername.isspace():
+            if deleteUsername == "root":
                 print(c.Fore.RED + "You can't delete yourself!")
             else:
                 if db.checkUsername(username):
-                    db.deleteUser(del_username)
+                    db.deleteUser(deleteUsername)
                     print(c.Fore.GREEN + "Username " + c.Fore.YELLOW +
                           username + c.Fore.GREEN + " deleted!")
                 else:

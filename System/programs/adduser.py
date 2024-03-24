@@ -5,15 +5,15 @@ import colorama as c
 c.init(autoreset=True)
 
 def run(params, username):
-    new_username = params
+    newUsername = params
     db = database()
     if username == "root":
         if username and not username.isspace():
-            if db.checkUsername(new_username):
-                print(c.Fore.RED + f"Username {new_username} already exists!")
+            if db.checkUsername(newUsername):
+                print(c.Fore.RED + f"Username {newUsername} already exists!")
             else:
                 print(c.Fore.BLUE +
-                      f"Adding new user {new_username}...")
+                      f"Adding new user {newUsername}...")
                 ok, passwd = new()
                 tries = 0
                 while not ok:
@@ -26,9 +26,9 @@ def run(params, username):
                     print(
                         c.Fore.RED + "Passwords do not match! Please try again!")
                     ok, passwd = new()
-                db.addUser(new_username, hash(passwd))
+                db.addUser(newUsername, hash(passwd))
                 print(c.Fore.GREEN + "Username " + c.Fore.YELLOW +
-                      new_username + c.Fore.GREEN + " added!")
+                      newUsername + c.Fore.GREEN + " added!")
         else:
             print(c.Fore.RED + "The username cannot be empty!")
     else:
