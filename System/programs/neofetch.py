@@ -2,7 +2,6 @@ import colorama as c
 
 c.init(autoreset=True)
 
-
 def run(params, username):
     print(c.Fore.LIGHTBLACK_EX + "        #####    " + c.Fore.RED +
           f"       {username}" + c.Fore.BLUE + "@" + c.Fore.GREEN + "pyos")
@@ -28,7 +27,6 @@ def run(params, username):
           "#" + c.Fore.YELLOW + "#######   " + c.Fore.RED + "CPU: " + c.Fore.GREEN + "PyCPU (1) @ 0.005GHz")
     print(c.Fore.YELLOW + "  #####" + c.Fore.LIGHTBLACK_EX + "#######" + c.Fore.YELLOW +
           "#####     " + c.Fore.RED + "Memory: " + c.Fore.GREEN + "1MiB / 2MiB")
-
 
 def help():
     return "Gives info about the system a nice format. Usage: neofetch."

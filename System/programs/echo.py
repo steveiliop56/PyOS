@@ -3,7 +3,6 @@ import colorama as c
 
 c.init(autoreset=True)
 
-
 def run(params, username):
     if params.find(" > ") != -1:
         fs = filesystem(username)
@@ -18,7 +17,6 @@ def run(params, username):
             fs.create_file(filename, content)
     else:
         print(c.Fore.BLUE + params)
-
 
 def help():
     return "Print something to the console or write to a file. Usage: echo Hello world or echo Hello World > somefile.txt"

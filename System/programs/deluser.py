@@ -3,7 +3,6 @@ import colorama as c
 
 c.init(autoreset=True)
 
-
 def run(params, username):
     del_username = params
     db = database()
@@ -22,7 +21,6 @@ def run(params, username):
             print(c.Fore.RED + "No username supplied!")
     else:
         print(c.Fore.RED + "Only root can delete users!")
-
 
 def help():
     return "With deluser you can delete different users from the os. Usage: deluser usertodelete. Note: Only root can delete user accounts."

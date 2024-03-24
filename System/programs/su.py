@@ -5,7 +5,6 @@ import colorama as c
 
 c.init(autoreset=True)
 
-
 def run(params, username):
     username = params
     db = database()
@@ -17,7 +16,6 @@ def run(params, username):
     else:
         print(
             c.Fore.RED + f"User does not exist!")
-
 
 def help():
     return "Su allows you to change your shell to other username. Usage: su username."

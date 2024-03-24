@@ -5,7 +5,6 @@ import colorama as c
 
 c.init(autoreset=True)
 
-
 def run(params, username):
     db = database()
     if params == "":
@@ -33,7 +32,6 @@ def run(params, username):
                 print(c.Fore.RED + f"Cannot find user {params}!")
         else:
             print(c.Fore.RED + "Only root can change other user's passwords!")
-
 
 def help():
     return "Chnage your password or change the passowrd of a user. Usage: passwd or passwd username. Note: only root can change other user's password."

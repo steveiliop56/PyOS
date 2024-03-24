@@ -4,7 +4,6 @@ import colorama as c
 
 c.init(autoreset=True)
 
-
 def run(params, username):
     new_username = params
     db = database()
@@ -34,7 +33,6 @@ def run(params, username):
             print(c.Fore.RED + "The username cannot be empty!")
     else:
         print(c.Fore.RED + "Only root can add new users!")
-
 
 def help():
     return "With adduser you can create new user accounts that can be used in the os. Usage: adduser username. Note: Only root can create user accounts."

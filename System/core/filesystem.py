@@ -1,6 +1,5 @@
 import os
 
-
 class filesystem():
     def __init__(self, username):
         self.username = username
@@ -13,6 +12,9 @@ class filesystem():
         if not os.path.exists(self.user_path):
             os.mkdir(self.user_path)
 
+    def path_exists(self, path):
+        return os.path.exists(self.user_path + path)
+    
     def get_files_folders(self):
         files = os.listdir(self.user_path)
         for i in range(len(files)):
@@ -35,3 +37,13 @@ class filesystem():
             return True
         except:
             return False
+        
+    def remove_directory(self, path):
+        try:
+            os.rmdir(self.user_path + path)
+            return True
+        except:
+            return False
+
+    def make_directory(self, path):
+        os.mkdir(self.user_path + path)

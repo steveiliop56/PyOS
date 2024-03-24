@@ -3,7 +3,6 @@ from System.auth.passwords import hash
 import bcrypt
 from os import path
 
-
 class database():
     def __init__(self):
         self.db_location = "System/auth/users.sqlite"

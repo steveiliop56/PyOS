@@ -1,9 +1,9 @@
 import colorama as c
+import platform
 
 c.init(autoreset=True)
 
 username = ""
-
 
 def shell(username):
     command = input(c.Fore.RED + f"{username}" + c.Fore.BLUE +
@@ -26,7 +26,6 @@ def shell(username):
 def set_shell_username(new_username):
     global username
     username = new_username
-
 
 def shell_manager():
     global username
