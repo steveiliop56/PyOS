@@ -1,5 +1,5 @@
 from System.core.database import database
-from System.core.shell import set_shell_username
+from System.core.shell import setShellUsername
 from getpass import getpass
 import colorama as c
 
@@ -9,8 +9,8 @@ def run(params, username):
     username = params
     db = database()
     if username and not username.isspace():
-        if db.check_password(username, getpass("Password: ")):
-            set_shell_username(username)
+        if db.checkPassword(username, getpass("Password: ")):
+            setShellUsername(username)
         else:
             print(c.Fore.RED + "Authentication failure!")
     else:

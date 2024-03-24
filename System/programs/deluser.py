@@ -11,8 +11,8 @@ def run(params, username):
             if del_username == "root":
                 print(c.Fore.RED + "You can't delete yourself!")
             else:
-                if db.check_username(username):
-                    db.del_user(del_username)
+                if db.checkUsername(username):
+                    db.deleteUser(del_username)
                     print(c.Fore.GREEN + "Username " + c.Fore.YELLOW +
                           username + c.Fore.GREEN + " deleted!")
                 else:

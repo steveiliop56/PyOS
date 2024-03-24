@@ -2,7 +2,7 @@ from System.core.database import database
 from getpass import getpass
 
 
-def login_screen():
+def loginScreen():
     username = input("PyOS login: ")
     password = getpass("Password: ")
     db = database()

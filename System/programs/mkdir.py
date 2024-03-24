@@ -5,10 +5,10 @@ c.init(autoreset=True)
 
 def run(params, username):
     fs = filesystem(username)
-    if fs.path_exists(params):
+    if fs.pathExists(params):
         print(c.Fore.RED + "Cannot create directory! Path exists!")
     else:
-        fs.make_directory(params)
+        fs.makeDirectory(params)
         print(c.Fore.GREEN + "Directory created!")
     
 def help():

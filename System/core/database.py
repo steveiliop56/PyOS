@@ -12,17 +12,17 @@ class database():
         else:
             self.connect_db()
 
-    def connect_db(self):
+    def connectDB(self):
         self.db = sqlite3.connect(self.db_location)
         self.cursor = self.db.cursor()
 
-    def init_db(self):
+    def initDB(self):
         self.cursor.execute(
             "create table users (username text not null unique, password text not null unique)")
         self.db.commit()
         self.add_user("root", hash("root"))
 
-    def check_username(self, username):
+    def checkUsername(self, username):
         self.cursor.execute(
             f"select rowid from users where username = '{username}'")
         db_result = self.cursor.fetchall()
@@ -31,7 +31,7 @@ class database():
         else:
             return False
 
-    def check_password(self, username, password):
+    def checkPassword(self, username, password):
         if self.check_username(username):
             self.cursor.execute(
                 f"select password from users where username = '{username}'")
@@ -46,16 +46,16 @@ class database():
         else:
             return False
 
-    def add_user(self, username, hashed_password):
+    def addUser(self, username, hashed_password):
         self.cursor.execute(
             f"insert into users values ('{username}', '{hashed_password}')")
         self.db.commit()
 
-    def del_user(self, username):
+    def deleteUser(self, username):
         self.cursor.execute(f"delete from users where username = '{username}'")
         self.db.commit()
 
-    def change_pass(self, username, new_hashed_password):
+    def changePassword(self, username, new_hashed_password):
         self.cursor.execute(
             f"update users set password = '{new_hashed_password}' where username = '{username}'")
         self.db.commit()

@@ -9,10 +9,10 @@ def run(params, username):
     db = database()
     if params == "":
         print(c.Fore.BLUE + f"Changing password for yourself...")
-        if db.check_password(username, getpass("Enter current password: ")):
+        if db.checkPassword(username, getpass("Enter current password: ")):
             ok, passwd = new()
             if ok:
-                db.change_pass(username, hash(passwd))
+                db.changePassword(username, hash(passwd))
                 print(c.Fore.GREEN + "Password updated!")
             else:
                 print(c.Fore.RED + "Passwords do not match!")
@@ -21,10 +21,10 @@ def run(params, username):
     else:
         if username == "root":
             print(c.Fore.BLUE + f"Changing password for username {params}...")
-            if db.check_username(params):
+            if db.checkUsername(params):
                 ok, passwd = new()
                 if ok:
-                    db.change_pass(params, hash(passwd))
+                    db.changePassword(params, hash(passwd))
                     print(c.Fore.GREEN + "Password updated!")
                 else:
                     print(c.Fore.RED + "Passwords do not match!")

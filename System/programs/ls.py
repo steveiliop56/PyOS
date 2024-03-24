@@ -5,7 +5,7 @@ c.init(autoreset=True)
 
 def run(params, username):
     fs = filesystem(username)
-    files = fs.get_files_folders()
+    files = fs.getFiles()
     for i in range(len(files)):
         print(c.Fore.CYAN + files[i])
 

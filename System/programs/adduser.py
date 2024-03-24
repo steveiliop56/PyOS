@@ -9,7 +9,7 @@ def run(params, username):
     db = database()
     if username == "root":
         if username and not username.isspace():
-            if db.check_username(new_username):
+            if db.checkUsername(new_username):
                 print(c.Fore.RED + f"Username {new_username} already exists!")
             else:
                 print(c.Fore.BLUE +
@@ -26,7 +26,7 @@ def run(params, username):
                     print(
                         c.Fore.RED + "Passwords do not match! Please try again!")
                     ok, passwd = new()
-                db.add_user(new_username, hash(passwd))
+                db.addUser(new_username, hash(passwd))
                 print(c.Fore.GREEN + "Username " + c.Fore.YELLOW +
                       new_username + c.Fore.GREEN + " added!")
         else:

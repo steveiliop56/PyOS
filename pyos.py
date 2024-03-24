@@ -14,19 +14,19 @@ if __name__ == "__main__":
 
     # Wait for user to login
     print(c.Fore.BLUE + "Welcome, please login!" + c.Fore.LIGHTBLACK_EX)
-    login_status = login.login_screen()
+    login_status = login.loginScreen()
     tries = 0
     while list([login_status])[0] == False:
         tries += 1
         if tries <= 3:
             print(c.Fore.RED + "Invalid username or password! Please try again." +
                   c.Fore.LIGHTBLACK_EX)
-            login_status = login.login_screen()
+            login_status = login.loginScreen()
         else:
             print(c.Fore.YELLOW + "Warning! Maximum tries reached, sleeping 5 seconds bec.fore retrying!" + c.Fore.LIGHTBLACK_EX)
             time.sleep(5)
 
     # Activate the shell and tell it what username to use
-    shell.set_shell_username(login_status[1])
-    shell_thread = threading.Thread(target=shell.shell_manager, args=())
+    shell.setShellUsername(login_status[1])
+    shell_thread = threading.Thread(target=shell.shellManager, args=())
     shell_thread.start()

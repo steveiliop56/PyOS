@@ -5,7 +5,7 @@ c.init(autoreset=True)
 
 def run(params, username):
     fs = filesystem(username)
-    if not fs.delete(params):
+    if not fs.deleteFile(params):
         print(c.Fore.RED + "Failed to delete file. Is the path correct?")
     else:
         print(c.Fore.GREEN + "File deleted!")

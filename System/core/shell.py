@@ -23,11 +23,11 @@ def shell(username):
                   program + c.Fore.RED + " not found!")
 
 
-def set_shell_username(new_username):
+def setShellUsername(new_username):
     global username
     username = new_username
 
-def shell_manager():
+def shellManager():
     global username
     while True:
         shell(username)

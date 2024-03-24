@@ -5,8 +5,8 @@ c.init(autoreset=True)
 
 def run(params, username):
     fs = filesystem(username)
-    if fs.path_exists(params):
-        if fs.remove_directory(params):
+    if fs.pathExists(params):
+        if fs.removeDirectory(params):
             print(c.Fore.GREEN + "Directory deleted!")
         else:
             print(c.Fore.RED + "Failed to delete directory!")
