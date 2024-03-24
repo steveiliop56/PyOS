@@ -12,9 +12,11 @@ def run(params, username):
         try:
             path = filename[:filename.index("/")]
             filename = path[-1]
-            fs.create_file(filename, content, path)
+            if not fs.createFile(filename, content, path):
+                print(c.Fore.RED + "You won't exploit me!")
         except:
-            fs.create_file(filename, content)
+            if not fs.createFile(filename, content):
+                print(c.Fore.RED + "You won't exploit me!")
     else:
         print(c.Fore.BLUE + params)
 

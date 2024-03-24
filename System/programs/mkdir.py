@@ -8,8 +8,10 @@ def run(params, username):
     if fs.pathExists(params):
         print(c.Fore.RED + "Cannot create directory! Path exists!")
     else:
-        fs.makeDirectory(params)
-        print(c.Fore.GREEN + "Directory created!")
+        if fs.makeDirectory(params):
+            print(c.Fore.GREEN + "Directory created!")
+        else:
+            print(c.Fore.RED + "You won't exploit me!")
     
 def help():
     return "Create directories. Usage: mkdir somedir"
