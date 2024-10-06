@@ -22,6 +22,10 @@ Get ready for...
 - 😄 As little requirements as possible so you can get to the fun part quickly.
 - 😁 Anddd in any way it's better than windows!
 
+## Default Login
+
+Whoops, forgot to mention that the default credentials are `root` and `root`.
+
 ## Development
 
 The os will be developed as quickly as I possibly can™ (get ready for decade updates!) and I will try to add as many features as possible. Please open an issue for any issue you encounter. I am also happy to approve pull requests!
